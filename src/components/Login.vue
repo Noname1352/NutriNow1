@@ -39,6 +39,9 @@ export default {
                 this.islogin = true
                 localStorage.data = {name: 'Radik', gender: 'Man', password: 'qwerasdf'}
             }
+            else {
+                alert('Логин или пароль указан неверно')
+            }
             // const request = JSON.stringify({
             //     name: this.name,
             //     password: this.password
