@@ -1,7 +1,7 @@
 <template>
     <div class="login" v-if="!this.islogin">
         <form @submit.prevent="Login">
-            <h2>Входd</h2>
+            <h2>Вход</h2>
             <input type="text" placeholder="Имя" v-model="this.name" required>
             <input type="password" placeholder="Пароль" v-model="this.password" required>
             <input type="submit" value="Войти">
