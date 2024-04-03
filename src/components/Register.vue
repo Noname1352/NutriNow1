@@ -32,7 +32,8 @@ export default {
             name: '',
             gender: 'Man',
             password: '',
-            islogin: false
+            islogin: false,
+            err: ''
         }
     },
     components: { AfterLogin },
@@ -65,8 +66,22 @@ export default {
             //         alert(res.data)
             //     }
             // })
-            if (!localStorage.users.includes({ name: this.name, gender: this.gender, password: this.password })){
-                localStorage.users.push({ name: this.name, gender: this.gender, password: this.password })
+            let list = JSON.parse(localStorage.users)
+            for (let i of list){
+                if (i[0] == this.name){
+                    this.err = true
+                }
+            }
+            if (!this.err) {
+                console.log(list)
+                this.islogin = true
+                localStorage.data = [this.name, this.gender, this.password]
+                list.push([this.name, this.gender, this.password])
+                localStorage.users = JSON.stringify(list)
+            }
+            else {
+                alert('Аккаунт с текущим именем уже существует')
+                this.err = false
             }
         }
     }

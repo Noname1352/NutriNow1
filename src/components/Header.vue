@@ -20,7 +20,7 @@ export default {
     methods: {
         Unauth() {
             this.islogin = false
-            localStorage.clear()
+            localStorage.data = ''
         }
     },
     mounted() {
@@ -31,7 +31,7 @@ export default {
             this.islogin = false
         }
         if (!localStorage.users) {
-            localStorage.users = [{name: 'Radik', gender: 'Man', password: 'qwerasdf'}]
+            localStorage.users = JSON.stringify([['Radik', 'Man', 'qwerasdf'], ['None', 'Man', 'q']])
         }
     }
 }

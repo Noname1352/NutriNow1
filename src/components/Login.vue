@@ -35,9 +35,9 @@ export default {
     },
     methods: {
         Login() {
-            for (i of localStorage.users) {
-                if (i.name == this.name & i.password == this.password) {
-                    localStorage.data = {name: i.name, gender: i.gender, password: this.password}
+            for (let i of JSON.parse(localStorage.users)) {
+                if (i[0] == this.name & i[2] == this.password) {
+                    localStorage.data = {name: i[0], gender: i[1], password: i[2]}
                     this.islogin = true
                 }
             }
