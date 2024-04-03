@@ -30,9 +30,9 @@ export default {
         else {
             this.islogin = false
         }
-        if (!localStorage.users) {
-            localStorage.users = JSON.stringify([['Radik', 'Man', 'qwerasdf'], ['None', 'Man', 'q']])
-        }
+        // if (!localStorage.users) {
+        //     localStorage.users = JSON.stringify([['Radik', 'Man', 'qwerasdf'], ['None', 'Man', 'q']])
+        // }
     }
 }
 </script>

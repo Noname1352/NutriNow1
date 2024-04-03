@@ -66,22 +66,30 @@ export default {
             //         alert(res.data)
             //     }
             // })
-            let list = JSON.parse(localStorage.users)
-            for (let i of list){
-                if (i[0] == this.name){
-                    this.err = true
-                }
-            }
-            if (!this.err) {
-                this.islogin = true
-                localStorage.data = [this.name, this.gender, this.password]
-                list.push([this.name, this.gender, this.password])
-                localStorage.users = JSON.stringify(list)
+
+            if (this.name == 'Radik') {
+                alert('Аккаунт с текущим именем уже существует')
             }
             else {
-                alert('Аккаунт с текущим именем уже существует')
-                this.err = false
+                this.islogin = true
+                localStorage.data = JSON.stringify({name: this.name, gender: this.gender, password: this.password})
             }
+            // let list = JSON.parse(localStorage.users)
+            // for (let i of list){
+            //     if (i[0] == this.name){
+            //         this.err = true
+            //     }
+            // }
+            // if (!this.err) {
+            //     this.islogin = true
+            //     localStorage.data = [this.name, this.gender, this.password]
+            //     list.push([this.name, this.gender, this.password])
+            //     localStorage.users = JSON.stringify(list)
+            // }
+            // else {
+            //     alert('Аккаунт с текущим именем уже существует')
+            //     this.err = false
+            // }
         }
     }
 }
