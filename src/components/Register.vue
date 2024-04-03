@@ -73,7 +73,6 @@ export default {
                 }
             }
             if (!this.err) {
-                console.log(list)
                 this.islogin = true
                 localStorage.data = [this.name, this.gender, this.password]
                 list.push([this.name, this.gender, this.password])
