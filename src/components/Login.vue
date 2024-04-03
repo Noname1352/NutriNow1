@@ -35,15 +35,13 @@ export default {
     },
     methods: {
         Login() {
-            if (this.name == 'Radik' & this.password == 'qwerasdf') {
-                this.islogin = true
-                localStorage.data = {name: 'Radik', gender: 'Man', password: 'qwerasdf'}
+            for (i of localStorage.users) {
+                if (i.name == this.name & i.password == this.password) {
+                    localStorage.data = {name: i.name, gender: i.gender, password: this.password}
+                    this.islogin = true
+                }
             }
-            else if (localStorage.users.includes({name: this.name, password: this.password})) {
-                this.islogin = true
-                localStorage.data = {name: this.name, gender: , password: this.password}
-            }
-            else {
+            if (this.islogin == false) {
                 alert('Логин или пароль указан неверно')
             }
             // const request = JSON.stringify({
@@ -67,9 +65,6 @@ export default {
             //     }
             // })
         }
-    },
-    mounted: {
-
     }
 }
 </script>

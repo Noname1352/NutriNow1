@@ -29,7 +29,9 @@ export default {
         }
         else {
             this.islogin = false
-            localStorage.data = []
+        }
+        if (!localStorage.users) {
+            localStorage.users = [{name: 'Radik', gender: 'Man', password: 'qwerasdf'}]
         }
     }
 }

@@ -65,7 +65,9 @@ export default {
             //         alert(res.data)
             //     }
             // })
-            localStorage.data.push({ name: this.name, gender: this.gender, password: this.password })
+            if (!localStorage.users.includes({ name: this.name, gender: this.gender, password: this.password })){
+                localStorage.users.push({ name: this.name, gender: this.gender, password: this.password })
+            }
         }
     }
 }
