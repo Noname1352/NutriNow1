@@ -27,6 +27,10 @@ export default {
         if (localStorage.data) {
             this.islogin = true
         }
+        else {
+            this.islogin = false
+            localStorage.data = []
+        }
     }
 }
 </script>

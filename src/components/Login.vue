@@ -39,6 +39,10 @@ export default {
                 this.islogin = true
                 localStorage.data = {name: 'Radik', gender: 'Man', password: 'qwerasdf'}
             }
+            else if (localStorage.users.includes({name: this.name, password: this.password})) {
+                this.islogin = true
+                localStorage.data = {name: this.name, gender: , password: this.password}
+            }
             else {
                 alert('Логин или пароль указан неверно')
             }
@@ -63,6 +67,9 @@ export default {
             //     }
             // })
         }
+    },
+    mounted: {
+
     }
 }
 </script>
