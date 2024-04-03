@@ -30,7 +30,7 @@ export default {
         else {
             this.islogin = false
         }
-        if (!localStorage.users | localStorage.users == '[object Object]'') {
+        if (!localStorage.users) {
             localStorage.users = JSON.stringify([['Radik', 'Man', 'qwerasdf'], ['None', 'Man', 'q']])
         }
     }
